@@ -29,7 +29,6 @@ inputBtn.addEventListener("click", function(){
 
 //TAB BUTTON
 tabBtn.addEventListener("click", function(){
-    
     chrome.tabs.query({active:true, currentWindow:true},function(tabs){
         myLeads.push(tabs[0].url)
         localStorage.setItem("myLeads",JSON.stringify(myLeads))
@@ -45,13 +44,13 @@ deleteBtn.addEventListener("dblclick",function(){
 })
 
 
-btnCancel.addEventListener("click", function(){
-     closemessage()
-})
+// btnCancel.addEventListener("click", function(){
+//      closemessage()
+// })
 
-function closemessage(){
-    renameMessageBox.style.display = "none"
-}
+// function closemessage(){
+//     renameMessageBox.style.display = "none"
+// }
 
 if (leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
