@@ -29,7 +29,7 @@ inputBtn.addEventListener("click", function(){
 
 //TAB BUTTON
 tabBtn.addEventListener("click", function(){
-    renameMessageBox.style.display = "flex"
+    //renameMessageBox.style.display = "flex"
     chrome.tabs.query({active:true, currentWindow:true},function(tabs){
         myLeads.push(tabs[0].url)
         localStorage.setItem("myLeads",JSON.stringify(myLeads))
