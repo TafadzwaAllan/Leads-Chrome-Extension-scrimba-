@@ -29,11 +29,16 @@ inputBtn.addEventListener("click", function(){
 
 //TAB BUTTON
 tabBtn.addEventListener("click", function(){
+    try {
     chrome.tabs.query({active:true, currentWindow:true},function(tabs){
         myLeads.push(tabs[0].url)
         localStorage.setItem("myLeads",JSON.stringify(myLeads))
         render(myLeads)
     })
+    } catch (error) {
+        alert("Error accessing Chrome tabs. Make sure to run this in a Chrome extension context.")
+        console.error("Error accessing Chrome tabs:", error)
+    } 
 })
 
 //DELETE BUTTON
